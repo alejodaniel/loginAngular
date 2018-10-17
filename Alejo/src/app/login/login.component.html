@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 *ngIf="operacion=='login'">
+    LOGIN
+  </h1>
+  <h1 *ngIf="operacion=='register'">
+    REGISTER
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1"> INGRESE SU USERNAME</label>
+          <input type="email" class="form-control" [(ngModel)]="Email" name="Email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">INGRESE SU PASSWORD</label>
+          <input type="password" class="form-control" [(ngModel)]="Password" name="Password" placeholder="Password">
+        </div>
+        <a *ngIf="operacion=='login'" (click)="operacion='register'">NO TIENES CUENTA</a>
+        <a *ngIf="operacion=='register'" (click)="operacion='login'">YA TIENES CUENTA</a>
+        <br>
+
+        <button *ngIf="operacion=='login'" type="submit" class="btn btn-primary" (click)="login()">Ingresar</button>
+        <button *ngIf="operacion=='register'" type="submit" class="btn btn-primary" (click)="register()">Registrar</button>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
